@@ -7,9 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PNChartDelegate.h"
+#import "PNChart.h"
+@interface ViewController : UIViewController<PNChartDelegate>
 
-@interface ViewController : UIViewController
+@property (nonatomic) PNLineChart * lineChart;
+@property (nonatomic) PNBarChart * barChart;
+//@property (nonatomic) PNCircleChart * circleChart;
+@property (nonatomic) PNPieChart *pieChart;
+@property (nonatomic) PNScatterChart *scatterChart;
+@property (nonatomic) PNRadarChart *radarChart;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+- (IBAction)changeValue:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *changeValueButton;
+- (IBAction)rightSwitchChanged:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UISwitch *centerSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *leftSwitch;
+- (IBAction)leftSwitchChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *rightSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *animationsSwitch;
+- (IBAction)animationsSwitchChanged:(id)sender;
+- (IBAction)centerSwitchChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *leftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
+@property (weak, nonatomic) IBOutlet UILabel *centerSwitchLabel;
 @end
 
